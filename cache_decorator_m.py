@@ -6,8 +6,8 @@ def cache_decorator(fn):
         nonlocal cache
         args_str = ', '.join(str(arg) for arg in args)
         kwargs_str = ', '.join(f"{key}={value}" for key, value in kwargs.items())
-        curFn = "{}({})".format(fn.__name__, ', '.join([args_str, kwargs_str]))
-        hash_key = hashlib.sha256(curFn.encode()).hexdigest()#im using hashing incase the function call gets very long
+        cur_fn = "{}({})".format(fn.__name__, ', '.join([args_str, kwargs_str]))
+        hash_key = hashlib.sha256(cur_fn.encode()).hexdigest()#im using hashing incase the function call gets very long
 
         if hash_key in cache and use_cache==True :
             print("this what ive found in cache :")
