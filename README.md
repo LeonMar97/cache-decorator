@@ -1,4 +1,4 @@
-# cache-decorator
+# Cache-decorator
 python decorator with caching capabilities.
 
 ## How to use
@@ -8,28 +8,28 @@ the use_cache is set to use by default, and checks whether the function ran befo
 and returns the cache value if it did. if value "False" is passed to function
 call the fuction will be called, the value is being cached anyway.
 
-## add a decorator example
+## Add a decorator example
 ```python
 from cache_decorator_m import cache_decorator
 @cache_decorator
 def greet(name):
     return "hello {}".format(name)
 ```
-## call the decorator without cache
+## Call the decorator without cache
 ```python
 print(greet("michal",use_cache=False))
 ```
-### output
+### Output
 ```
 not in cache
 hello michal
 ```
-## call the decorator with cache right after
+## Call the decorator with cache right after
 ```python
 print(greet("michal",use_cache=False))
 print(greet("michal",use_cache=True))
 ```
-### output
+### Output
 ```
 not in cache
 hello michal
